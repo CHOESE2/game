@@ -1,4 +1,4 @@
-import processing.sound.*; //<>//
+import processing.sound.*;
 
 
 //mode framework
@@ -33,10 +33,7 @@ final int BUNNYFIGHT = 5;
 final int STATS = 6;
 final int MEWO = 7;
 final int FIGHT1 = 8;
-final int WINNER = 8;
-
-
-
+final int WINNER = 9;
 
 
 
@@ -72,6 +69,12 @@ float aax, aay; // acceleration// mewo's gravity
 float [] x;
 float [] y;
 int n;
+
+//stop rain
+int stopTime;
+boolean raining = true;
+int previousMode = -1;
+
 
 
 
@@ -180,6 +183,13 @@ for (i = 0; i < n; i++) {
   y[i] = random(-500, 0);
 }
 
+
+if (mode == GAME){
+raining = true;
+stopTime = millis() + 30000; 
+}
+
+ 
   
   
 
